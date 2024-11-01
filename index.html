@@ -3,44 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Comunidade RPG</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <audio id="background-music" loop>
+        <source src="song/music.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <script>
+        window.addEventListener('load', () => {
+            const audio = document.getElementById('background-music');
+            audio.loop = true;
+            audio.volume = 0.1;
+            audio.play().catch((error) => {
+                console.log("Autoplay foi bloqueado pelo navegador", error);
+            });
+        });
+    </script>
+
     <header class="header">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <!--Logo-->
-                        <a href="index.html" class="logo">
-                            <img src="assets/images/logo.png" alt="">
-                        </a>
-                        <!--Logo-->
-                        <!--Search-->
-                        <div class="search-input">
-                          <form id="search" action="#">
-                            <input type="text" placeholder="Digite alguma coisa..." />
-                            <i class="procurar"></i>
-                          </form>
-                        </div>
-                        <!--Search-->
-                        <!--Menu Start-->
-                        <ul class="nav">
-                            <li><a href="index.html" class="active">Início</a></li>
-                            <li><a href="mesas.html">Mesas</a></li>
-                            <li><a href="conquista.html">Conquistas</a></li>
-                            <li><a href="comunidade.html">Comunidade</a></li>
-                            <li><a href="perfil.html">Perfil <img src="assets/images/profile-header.jpg" alt=""></a></li>
-                        </ul>   
-                        <a class='menu'>
-                            <span>Menu</span>
-                        </a>
-                        <!--Menu-->
-                    </nav>
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="Logo RPG">
+                </a>
+                <div class="search-input">
+                    <form id="search" action="#">
+                        <input type="text" placeholder="Digite alguma coisa..." />
+                        <i class="procurar"></i>
+                    </form>
                 </div>
-            </div>
+                <ul class="nav">
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="mesas.html">Mesas</a></li>
+                    <li><a href="conquista.html">Conquistas</a></li>
+                    <li><a href="comunidade.html">Comunidade</a></li>
+                    <li><a href="perfil.html">Perfil <img src="assets/images/profile-header.jpg" alt=""></a></li>
+                </ul>
+                <a class='menu'>
+                    <span>Menu</span>
+                </a>
+            </nav>
         </div>
-      </header>
+    </header>
+
+    <section class="carousel"> 
+        <div class="carousel-container">
+            <a href="#" id="image1"><img src="assets/rpg.jpg" alt="Imagem 1"></a>
+            <a href="comunidade.html"><img src="assets/rpg2.jpg" alt="Imagem 2"></a>
+            <a href="comunidade.html"><img src="assets/rpg3.jpg" alt="Imagem 3"></a>
+        </div>
+        <button class="prev" onclick="showPrevImage()">&#10094;</button>
+        <button class="next" onclick="showNextImage()">&#10095;</button>
+    </section>
+
+    <section class="information">
+        <div class="container">
+            <h2>Bem-vindo à nossa Comunidade RPG!</h2>
+            <p>Aqui você pode explorar diversas mesas de RPG, interagir com outros jogadores e mestres, e compartilhar suas experiências de jogo.</p>
+            <h3>Recursos da Comunidade</h3>
+            <ul>
+                <li><strong>Mesas de Jogo:</strong> Descubra mesas ativas e novas campanhas para se juntar.</li>
+                <li><strong>Conquistas:</strong> Acompanhe suas conquistas e as dos outros jogadores.</li>
+                <li><strong>Eventos:</strong> Participe de eventos especiais e torneios organizados pela comunidade.</li>
+                <li><strong>Guias e Dicas:</strong> Acesse guias e dicas para melhorar suas habilidades de jogo.</li>
+                <li><strong>Fórum:</strong> Participe de discussões e tire suas dúvidas em nosso fórum.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <form id="contactForm">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" rows="5" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="formResponse"></div>
+        </div>
+    </section>
+
+    <div id="curiositiesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Curiosidades de RPGs de Mesa</h2>
+            <p>Os RPGs de mesa têm uma rica história que remonta aos anos 70, com o lançamento de "Dungeons & Dragons" sendo um dos marcos mais importantes para o gênero.</p>
+            <ul>
+                <li>O primeiro RPG foi inspirado em wargames militares e evoluiu para aventuras mais imaginativas e narrativas.</li>
+                <li>RPGs são tão populares que inspiraram diversos jogos de videogame e literatura fantástica.</li>
+                <li>Existem vários sistemas de RPG, como D&D, GURPS, e Call of Cthulhu, cada um com suas próprias regras e estilos de jogo.</li>
+                <li>O maior evento de RPG do mundo, a Gen Con, acontece anualmente nos EUA e atrai milhares de jogadores de todo o mundo.</li>
+            </ul>
+            <p>Essas são apenas algumas das curiosidades do universo dos RPGs de mesa, que continuam a cativar jogadores de todas as idades!</p>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>O Papel de um Mestre de RPG</h2>
+            <h3>Responsabilidades e Desafios</h3>
+            <p>O papel de um mestre de RPG (Role-Playing Game), também conhecido como Game Master (GM) ou Dungeon Master (DM), é fundamental para a experiência de jogo. O mestre é responsável por criar e conduzir a narrativa, sendo o mediador entre os jogadores e o mundo fictício que eles habitam.</p>
+            <h4>Criador de Mundos</h4>
+            <p>O mestre de RPG projeta o cenário da aventura, incluindo geografia, cultura, história e regras.</p>
+            <h4>Narrador e Facilitador</h4>
+            <p>Ele atua como narrador, descrevendo cenários e personagens não jogáveis (NPCs) que moldam a narrativa.</p>
+            <h4>Mediador de Regras</h4>
+            <p>O mestre aplica as regras do jogo e deve ter um bom entendimento das mecânicas do sistema de RPG escolhido.</p>
+            <h4>Gerador de Desafios</h4>
+            <p>Os mestres criam desafios e obstáculos que os jogadores devem enfrentar, seja em combates, enigmas ou dilemas morais.</p>
+            <h4>Construtor de Narrativas Coletivas</h4>
+            <p>O RPG é uma experiência colaborativa, e o mestre desempenha um papel crucial na construção de narrativas coletivas.</p>
+            <h4>Mantendo o Clima e a Imersão</h4>
+            <p>O mestre é responsável por criar e manter a atmosfera do jogo, evocando emoções e mantendo os jogadores imersos na experiência.</p>
+            <p>Em resumo, o mestre de RPG é um facilitador de experiências, um contador de histórias e um líder de grupo.</p>
+        </div>
+    </div>
+
+    <script>
+        // Carrossel de imagens
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.carousel-container img');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    img.classList.toggle('show', i === index);
+                });
+            }
+
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            }
+
+            setInterval(nextImage, 3000);
+
+            const contactForm = document.getElementById('contactForm');
+            const formResponse = document.getElementById('formResponse');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                formResponse.innerHTML = `<p>Obrigado, ${name}! Sua mensagem foi enviada.</p>`;
+                contactForm.reset();
+            });
+        });
+
+        let index = 0;
+        const carouselImages = document.querySelectorAll('.carousel-container img');
+
+        function showNextImage() {
+            carouselImages[index].style.display = 'none';
+            index = (index + 1) % carouselImages.length;
+            carouselImages[index].style.display = 'block';
+        }
+
+        function showPrevImage() {
+            carouselImages[index].style.display = 'none';
+            index = (index - 1 + carouselImages.length) % carouselImages.length;
+            carouselImages[index].style.display = 'block';
+        }
+
+        carouselImages.forEach(img => img.style.display = 'none');
+        carouselImages[index].style.display = 'block';
+
+        // Modal Script
+        const modal = document.getElementById("myModal");
+        const imageLink = document.getElementById("image1");
+        const closeButtons = document.querySelectorAll(".close");
+
+        imageLink.onclick = function(event) {
+            event.preventDefault();
+            modal.style.display = "block";
+        }
+
+        closeButtons.forEach(button => {
+            button.onclick = function() {
+                modal.style.display = "none";
+            }
+        });
+
+        window.onclick = function(event) {
+            if (event.target == modal || event.target == document.getElementById("curiositiesModal")) {
+                modal.style.display = "none";
+                document.getElementById("curiositiesModal").style.display = "none";
+            }
+        }
+
+        const curiositiesModal = document.getElementById("curiositiesModal");
+        const rpg2ImageLink = document.querySelector(".carousel-container a:nth-child(2)");
+
+        rpg2ImageLink.onclick = function(event) {
+            event.preventDefault();
+            curiositiesModal.style.display = "block";
+        }
+    </script>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <h2>Sobre Nós</h2>
+            <p>Somos uma comunidade dedicada a conectar entusiastas de RPG, proporcionando um ambiente onde jogadores podem compartilhar experiências, organizar eventos e participar de discussões sobre jogos de mesa e suas conquistas. Junte-se a nós para explorar mundos fantásticos!</p>
+            <p>&copy; 2024 RPG Comunidade. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>

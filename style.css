@@ -1,0 +1,292 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background e container geral */
+body {
+    font-family: 'Cinzel', serif; /* Fonte com estilo medieval */
+    background-color: #1b1b1b;
+    color: #e2e2e2;
+}
+
+/* Estilo do Cabeçalho */
+.header {
+    background: linear-gradient(45deg, #2b2b2b, #4f4f4f);
+    border-bottom: 2px solid #7b4705;
+    padding: 10px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo img {
+    max-width: 100px;
+    border: 2px solid #7b4705;
+    border-radius: 5px;
+}
+
+/* Busca */
+.search-input {
+    position: relative;
+}
+
+.search-input input[type="text"] {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 2px solid #7b4705;
+    background-color: #3c3c3c;
+    color: #e2e2e2;
+}
+
+.search-input input[type="text"]::placeholder {
+    color: #bfbfbf;
+}
+
+.procurar {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7b4705;
+}
+
+/* Links do Menu */
+.nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav li {
+    margin: 0 10px;
+}
+
+.nav a {
+    color: #e2e2e2;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.nav a.active, .nav a:hover {
+    color: #fff;
+    background-color: #7b4705;
+    border-color: #7b4705;
+}
+
+.nav a img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #7b4705;
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+.nav a img:hover {
+    transform: scale(1.1);
+}
+
+/* Botão do Menu */
+.menu {
+    display: none;
+    color: #e2e2e2;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #7b4705;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.menu:hover {
+    background-color: #7b4705;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+    .menu {
+        display: inline-block;
+    }
+}
+
+/* Seção de Carrossel */
+.carousel {
+    background-color: #1b1b1b;
+    padding: 20px;
+    border: 3px solid #7b4705; /* Bordas estilo medieval */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Sombra para dar profundidade */
+    width: 100%;
+    margin: 20px auto; /* Espaço acima e abaixo do carrossel */
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px; /* Altura do carrossel */
+}
+
+.carousel-container img {
+    width: 100%;
+    height: 100%; /* Garante que todas as imagens ocupem a mesma altura */
+    object-fit: cover; /* Faz com que a imagem cubra o espaço sem distorcer */
+    border-radius: 8px;
+    border: 2px solid #7b4705;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Exibe a imagem atual com opacidade e escala */
+.carousel-container img.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Seção de Características */
+.features {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border: 3px solid #7b4705;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.features ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Seção de Contato */
+.contact {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border: 3px solid #7b4705;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact label {
+    margin: 10px 0 5px;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #7b4705;
+    margin-bottom: 10px;
+}
+
+.contact button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7b4705;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact button:hover {
+    background-color: #9b5705;
+}
+
+/* Estilo do Footer */
+.footer {
+    background-color: #222; /* Cor de fundo escura */
+    color: #fff; /* Texto branco */
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #f5a623; /* Cor destacada estilo RPG */
+}
+
+.footer p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #ccc; /* Cor de texto sutil */
+}
+
+.footer p:last-child {
+    font-size: 0.9em;
+    color: #777; /* Cor mais clara para o texto final */
+}
+
+/* Modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 600px; 
+    border-radius: 10px; 
+    color: black;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
