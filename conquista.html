@@ -13,7 +13,6 @@
         const currentPath = window.location.pathname;
 
         navLinks.forEach(link => {
-            // Verifica se o href do link corresponde à URL atual
             if (link.getAttribute('href') === currentPath.split('/').pop()) {
                 link.classList.add('active');
             } else {
@@ -72,3 +71,53 @@
             </div>
         </div>
     </header>
+
+    <!-- Seção de Conquistas -->
+    <section class="achievements">
+        <div class="achievement-category">
+            <h3>Mestres que mais mestraram mesas</h3>
+            <div class="bars">
+                <div class="bar2">
+                    <div class="circle2"><img src="assets/user1.jpg" alt="Foto do mestre"></div>
+                </div>
+                <div class="bar1">
+                    <div class="circle1"><img src="assets/user2.jpg" alt="Foto do mestre"></div>
+                </div>
+                <div class="bar3">
+                    <div class="circle3"><img src="assets/user3.jpg" alt="Foto do mestre"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="achievement-category">
+            <h3>Jogadores que mais jogaram mesas</h3>
+            <div class="bars">
+                <div class="bar2">
+                    <div class="circle2"><img src="assets/user4.jpg" alt="Foto do jogador"></div>
+                </div>
+                <div class="bar1">
+                    <div class="circle1"><img src="assets/user5.jpg" alt="Foto do jogador"></div>
+                </div>
+                <div class="bar3">
+                    <div class="circle3"><img src="assets/user6.jpg" alt="Foto do jogador"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="achievement-category">
+            <h3>Maior quantidade de personagens</h3>
+            <div class="bars">
+                <div class="bar2">
+                    <div class="circle2"><img src="assets/user7.jpg" alt="Foto do personagem"></div>
+                </div>
+                <div class="bar1">
+                    <div class="circle1"><img src="assets/user8.jpg" alt="Foto do personagem"></div>
+                </div>
+                <div class="bar3">
+                    <div class="circle3"><img src="assets/user9.jpg" alt="Foto do personagem"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

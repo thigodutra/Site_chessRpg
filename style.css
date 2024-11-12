@@ -157,7 +157,6 @@ body {
     transition: opacity 1s ease, transform 1s ease;
 }
 
-
 button.prev, button.next {
     position: absolute;
     top: 37%;
@@ -328,4 +327,175 @@ button.prev:active, button.next:active {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+/* Mesas */
+body {
+    font-family: 'Cinzel', serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #333;
+    padding: 20px;
+}
+
+.main-nav .nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-nav .nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.main-nav .nav a.active {
+    font-weight: bold;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+button {
+    margin: 0 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Conquistas */
+.achievements {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.achievement-category {
+    text-align: center;
+    width: 30%;
+}
+
+.bars {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.bar1 {
+    width: 60px;
+    height: 100px;
+    background-color: red;
+    border: 2px solid #ff4d4d;
+    transition: height 0.3s;
+    position: relative;
+}
+
+.bar2 {
+    width: 60px;
+    background-color: red;
+    height: 70px;
+    border: 2px solid #ff4d4d;
+    transition: height 0.3s;
+    position: relative;
+}
+
+.bar3 {
+    width: 60px;
+    background-color: red;
+    height: 40px;
+    border: 2px solid #ff4d4d;
+    transition: height 0.3s;
+    position: relative;
+}
+
+.circle1 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    background-color: #222;
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle2 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    background-color: #222;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle3 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    background-color: #222;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
