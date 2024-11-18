@@ -7,101 +7,39 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
     <style>
-        /* Estilos para layout de roleta */
-        .posts-container {
-            display: flex;
-            gap: 40px; /* Aumenta o espaçamento entre os posts */
-            overflow: hidden;
-            width: 100%;
-            position: relative;
-        }
-
-        .posts-wrapper {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .post {
-            background-color: #f0f0f0;
-            padding: 30px; /* Aumenta o padding para espaçar mais o conteúdo */
-            border-radius: 8px;
-            width: 300px;
-            flex-shrink: 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .post-buttons {
-            margin-top: 10px;
-        }
-
-        .post-buttons button {
-            margin-right: 10px;
-        }
-
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 30px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10;
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-
-        .genre-section {
-            margin-bottom: 50px; /* Adiciona espaço entre os carrosséis de diferentes gêneros */
-        }
-
-        .genre-section h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        /* Modal (estilo permanece igual) */
-        .modal {
+        /* Adicionando estilos básicos para os modais */
+        .window {
             display: none;
             position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 10% auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            width: 300px;
+            border: 1px solid #7b4705;
+            background-color: #3c3c3c;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
             padding: 20px;
-            width: 80%;
-            max-width: 600px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
+        .window.show {
+            display: block;
+        }
+
+        .window-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-weight: bold;
+            color: #fff;
         }
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: #fff;
             cursor: pointer;
         }
     </style>
@@ -112,28 +50,23 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
-                        <!-- Logo -->
                         <a href="mesas.html" class="logo">
                             <img src="assets/logo.png" alt="">
                         </a>
-                        <!-- Pesquisa -->
                         <div class="search-input">
                             <form id="search" action="#">
                                 <input type="text" placeholder="Digite alguma coisa..." />
                                 <i class="procurar"></i>
                             </form>
                         </div>
-                        <!-- Menu -->
                         <ul class="nav">
-                            <li><a href="index.html" class="active">Início</a></li>
-                            <li><a href="mesas.html">Mesas</a></li>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="mesas.html" class="active">Mesas</a></li>
                             <li><a href="conquista.html">Conquistas</a></li>
                             <li><a href="comunidade.html">Comunidade</a></li>
-                            <li><a href="perfil.html"> <img src="assets/perfil.png"></a></li>
-                        </ul>   
-                        <a class='menu'>
-                            <span>Menu</span>
-                        </a>
+                            <li><a href="perfil.html"><img src="assets/perfil.png" alt="Perfil"></a></li>
+                        </ul>
+                        <a class="menu"><span>Menu</span></a>
                     </nav>
                 </div>
             </div>
@@ -141,7 +74,7 @@
     </header>
 
     <main>
-        <!-- Gênero 1 - Carrossel de Posts -->
+        <!-- Gêneros e carrosséis -->
         <div class="genre-section">
             <h2>Gênero 1</h2>
             <div class="posts-container">
@@ -156,115 +89,63 @@
                             <button class="open-modal" data-modal="modal-2">Botão 2</button>
                         </div>
                     </div>
-
-                    <div class="post">
-                        <h3>Título do Post 2</h3>
-                        <p>Descrição do post 2. Este é o conteúdo básico do post com mais detalhes.</p>
-                        <p><strong>Tempo do Post:</strong> 5 horas atrás</p>
-                        <p><strong>Pessoas participando:</strong> 28</p>
-                        <div class="post-buttons">
-                            <button class="open-modal" data-modal="modal-3">Botão 1</button>
-                            <button class="open-modal" data-modal="modal-4">Botão 2</button>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <h3>Título do Post 3</h3>
-                        <p>Descrição do post 3. Este é o conteúdo básico do post com mais detalhes.</p>
-                        <p><strong>Tempo do Post:</strong> 1 dia atrás</p>
-                        <p><strong>Pessoas participando:</strong> 42</p>
-                        <div class="post-buttons">
-                            <button class="open-modal" data-modal="modal-5">Botão 1</button>
-                            <button class="open-modal" data-modal="modal-6">Botão 2</button>
-                        </div>
-                    </div>
                 </div>
-                <span class="prev">&#10094;</span>
-                <span class="next">&#10095;</span>
-            </div>
-        </div>
-
-        <!-- Gênero 2 - Carrossel de Posts -->
-        <div class="genre-section">
-            <h2>Gênero 2</h2>
-            <div class="posts-container">
-                <div class="posts-wrapper">
-                    <!-- Post 1, 2, 3 para Gênero 2 (estrutura similar ao Gênero 1) -->
-                </div>
-                <span class="prev">&#10094;</span>
-                <span class="next">&#10095;</span>
-            </div>
-        </div>
-
-        <!-- Gênero 3 - Carrossel de Posts -->
-        <div class="genre-section">
-            <h2>Gênero 3</h2>
-            <div class="posts-container">
-                <div class="posts-wrapper">
-                    <!-- Post 1, 2, 3 para Gênero 3 (estrutura similar ao Gênero 1) -->
-                </div>
-                <span class="prev">&#10094;</span>
-                <span class="next">&#10095;</span>
             </div>
         </div>
     </main>
 
-    <!-- Modais (permanece o mesmo) -->
+    <!-- Modais -->
+    <div id="modal-1" class="window">
+        <div class="window-header">
+            Modal 1
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="window-content">
+            <p>Conteúdo do Modal 1</p>
+        </div>
+    </div>
 
+    <div id="modal-2" class="window">
+        <div class="window-header">
+            Modal 2
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="window-content">
+            <p>Conteúdo do Modal 2</p>
+        </div>
+    </div>
+
+    <!-- JavaScript embutido -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const postsWrappers = document.querySelectorAll('.posts-wrapper');
-            
-            postsWrappers.forEach(postsWrapper => {
-                let index = 0;
-                const postWidth = document.querySelector('.post').offsetWidth;
-
-                function moveToPost(newIndex) {
-                    index = newIndex;
-                    postsWrapper.style.transform = `translateX(-${postWidth * index}px)`;
-                }
-
-                postsWrapper.closest('.posts-container').querySelector('.prev').addEventListener('click', () => {
-                    if (index > 0) {
-                        moveToPost(index - 1);
-                    }
-                });
-
-                postsWrapper.closest('.posts-container').querySelector('.next').addEventListener('click', () => {
-                    const totalPosts = postsWrapper.children.length;
-                    if (index < totalPosts - 1) {
-                        moveToPost(index + 1);
-                    }
-                });
-            });
-
-            // Abrir e fechar modais
-            function openModal(modalId) {
-                document.getElementById(modalId).style.display = 'block';
+        // Função para abrir o modal
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('show');
             }
+        }
 
-            function closeModal(modalId) {
-                document.getElementById(modalId).style.display = 'none';
+        // Função para fechar o modal
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('show');
             }
+        }
 
-            document.querySelectorAll('.open-modal').forEach(button => {
-                button.addEventListener('click', () => {
-                    const modalId = button.getAttribute('data-modal');
-                    openModal(modalId);
-                });
+        // Seleciona todos os botões de abrir modal
+        document.querySelectorAll('.open-modal').forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.getAttribute('data-modal');
+                openModal(modalId);
             });
+        });
 
-            document.querySelectorAll('.close').forEach(closeBtn => {
-                closeBtn.addEventListener('click', () => {
-                    const modalId = closeBtn.getAttribute('data-close');
-                    closeModal(modalId);
-                });
-            });
-
-            window.addEventListener('click', (event) => {
-                if (event.target.classList.contains('modal')) {
-                    event.target.style.display = 'none';
-                }
+        // Seleciona todos os botões de fechar modal
+        document.querySelectorAll('.close-modal').forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.closest('.window').id;
+                closeModal(modalId);
             });
         });
     </script>

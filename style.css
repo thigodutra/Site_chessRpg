@@ -87,7 +87,7 @@ body {
 .nav a.active, .nav a:hover {
     color: #fff;
     background-color: #7b4705;
-    border-color: #7b4705;
+    border-color: #7b4705; 
 }
 
 .nav a img {
@@ -417,11 +417,40 @@ button {
     background-color: #333;
     color: #fff;
 }
-
 .achievement-category {
     text-align: center;
     width: 30%;
-    margin-bottom: 10%;
+    margin: 30px auto;
+    padding: 20px;
+    border: 3px solid #000000;
+    border-radius: 15px;
+    background-image: url('assets/background.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o elemento */
+    background-position: center; /* Centraliza a imagem */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-category:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.achievement-category h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.achievement-category .bars-container {
+    display: flex;
+    justify-content: space-evenly; /* Espaço igual entre os elementos */
+    align-items: flex-end; /* Alinha ao final para gráficos */
+    gap: 10px; /* Espaço entre as barras */
+    height: 150px; /* Altura uniforme para os gráficos */
+    margin-top: 20px; /* Espaçamento acima dos gráficos */
 }
 
 .bars {
@@ -433,7 +462,7 @@ button {
 .bar1 {
     width: 60px;
     height: 100px;
-    background-color: red;
+    background-color: #c9b037;
     border: 2px solid #ff4d4d;
     transition: height 0.3s;
     position: relative;
@@ -441,7 +470,7 @@ button {
 
 .bar2 {
     width: 60px;
-    background-color: red;
+    background-color: #b4b4b4;
     height: 70px;
     border: 2px solid #ff4d4d;
     transition: height 0.3s;
@@ -450,68 +479,26 @@ button {
 
 .bar3 {
     width: 60px;
-    background-color: red;
+    background-color: #ad8a56;
     height: 40px;
     border: 2px solid #ff4d4d;
     transition: height 0.3s;
     position: relative;
 }
 
-.circle1 {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #fff;
-    background-color: #222;
-    position: absolute;
-    top: 110px;
-    left: 50%;
-    transform: translateX(-50%);
+.circle1, .circle2, .circle3 {
+    width: 40px; /* Largura ajustável */
+    height: 40px; /* Altura ajustável */
+    border-radius: 50%; /* Formato circular */
+    overflow: hidden; /* Garante que a imagem fique dentro do círculo */
+    border: 2px solid #fff; /* Borda para destaque */
+    background-color: #222; /* Cor de fundo */
 }
 
-.circle2 {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #fff;
-    background-color: #222;
-    position: absolute;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.circle3 {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #fff;
-    background-color: #222;
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.circle1 img {
+.circle1 img, .circle2 img, .circle3 img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-}
-
-.circle2 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.circle3 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Garante que a imagem ocupe o círculo sem distorcer */
 }
 
 .modal {
@@ -549,4 +536,81 @@ button {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+
+/* Modal */
+
+.window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 20%;
+    max-width: 900%; /* Responsivo */
+    border: 2px solid #7b4705;
+    background-color: #3c3c3c;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.window.show {
+    display: block;
+}
+
+.window-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Medalhas */
+.medal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.medal-icon {
+    width: 40px; /* Ajuste para o tamanho desejado */
+    height: auto;
+}
+
+.medal-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gold {
+    color: #FFD700; /* Dourado */
+    font-size: 2em;
+}
+
+.silver {
+    color: #C0C0C0; /* Prata */
+    font-size: 2em;
+}
+
+.bronze {
+    color: #CD7F32; /* Bronze */
+    font-size: 2em;
 }
