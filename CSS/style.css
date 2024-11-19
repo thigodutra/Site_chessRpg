@@ -424,7 +424,7 @@ button {
     padding: 20px;
     border: 3px solid #000000;
     border-radius: 15px;
-    background-image: url('assets/background.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('/assets/background.jpg'); /* Substitua pelo caminho da sua imagem */
     background-size: cover; /* Faz a imagem cobrir todo o elemento */
     background-position: center; /* Centraliza a imagem */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);

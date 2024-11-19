@@ -4,40 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script src="/JavaScript/script.js"></script> 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const navLinks = document.querySelectorAll('.nav a');
-        const currentPath = window.location.pathname;
-
-        navLinks.forEach(link => {
-            // Verifica se o href do link corresponde à URL atual
-            if (link.getAttribute('href') === currentPath.split('/').pop()) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    });
-</script>
 
 <audio id="background-music" loop>
     <source src="song/music.mp3" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
 </audio>
-
-<script>
-    window.addEventListener('load', () => {
-        const audio = document.getElementById('background-music');
-        audio.loop = true;
-        audio.volume = 0.1;
-        audio.play().catch((error) => {
-            console.log("Autoplay foi bloqueado pelo navegador", error);
-        });
-    });
-</script>
 
 <body>
     <header class="header">
@@ -46,8 +21,8 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- Logo -->
-                        <a href="perfil.html" class="logo">
-                            <img src="assets/logo.png" alt="">
+                        <a href="/HTML/perfil.html" class="logo">
+                            <img src="/assets/logo.png" alt="">
                         </a>
                         <!-- Pesquisa -->
                         <div class="search-input">
@@ -58,11 +33,11 @@
                         </div>
                         <!-- Menu -->
                         <ul class="nav">
-                            <li><a href="index.html" class="active">Início</a></li>
-                            <li><a href="mesas.html">Mesas</a></li>
-                            <li><a href="conquista.html">Conquistas</a></li>
-                            <li><a href="comunidade.html">Comunidade</a></li>
-                            <li><a href="perfil.html"> <img src="assets/perfil.png"></a></li>
+                            <li><a href="/HTML/index.html" class="active">Início</a></li>
+                            <li><a href="/HTML/mesas.html">Mesas</a></li>
+                            <li><a href="/HTML/conquista.html">Conquistas</a></li>
+                            <li><a href="/HTML/comunidade.html">Comunidade</a></li>
+                            <li><a href="/HTML/perfil.html"> <img src="/assets/perfil.png"></a></li>
                         </ul>   
                         <a class='menu'>
                             <span>Menu</span>
@@ -77,7 +52,7 @@
         <!-- Informações do Usuário -->
         <div class="user-info-section">
             <div class="profile-pic">
-                <img src="assets/user1.jpg" alt="Avatar do Usuário">
+                <img src="/assets/user1.jpg" alt="Avatar do Usuário">
                 <button class="edit-pic">Editar Foto</button>
             </div>
             <div class="user-details">
