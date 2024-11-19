@@ -614,3 +614,150 @@ button {
     color: #CD7F32; /* Bronze */
     font-size: 2em;
 }
+
+
+/* Perfil */
+.body {
+    font-family: 'Cinzel', serif;
+    background-color: #f3f3f3;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.user-info-section {
+    display: flex;
+    align-items: center;
+    background-color: #292929;
+    border: 2px solid #7b4705;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.profile-pic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.edit-pic {
+    margin-top: 10px;
+    display: flex;
+    padding: 5px 20px;
+    background-color: #7b4705;
+    color: #fff;
+    border-radius: 4px;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+}
+
+.edit-info {
+    margin-top: 70px;
+    display: flex;
+    padding: 5px 20px;
+    background-color: #2b2b2b;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Cinzel', serif;
+}
+
+.characters-section {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.character-card {
+    background-color: #383838;
+    border: 2px solid #7b4705;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.character-sheet {
+    background-color: #292929;
+    border: 2px solid #7b4705;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+textarea, input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #7b4705;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+.character-sheet-container {
+    background-color: #292929;
+    width: 80%;
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.character-info,
+.attributes,
+.proficiencies,
+.equipment {
+    margin-bottom: 20px;
+}
+
+.character-info label,
+.attribute label,
+.proficiencies label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.character-info input,
+.attribute input,
+.proficiencies textarea,
+.equipment textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.attributes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+h3 {
+    font-size: 1.2em;
+    border-bottom: 2px solid #333;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}

@@ -72,3 +72,271 @@
             </div>
         </div>
     </header>
+
+    <div class="profile-page">
+        <!-- Informações do Usuário -->
+        <div class="user-info-section">
+            <div class="profile-pic">
+                <img src="assets/user1.jpg" alt="Avatar do Usuário">
+                <button class="edit-pic">Editar Foto</button>
+            </div>
+            <div class="user-details">
+                <h1 id="username">Nome do Usuário</h1>
+                <p id="email">email@exemplo.com</p>
+                <button class="edit-info">Editar Informações</button>
+            </div>
+        </div>
+    
+        <!-- Lista de Personagens -->
+        <div class="characters-section">
+            <h2>Meus Personagens</h2>
+            <div class="characters-list">
+                <!-- Um personagem de exemplo -->
+                <div class="character-card" id="char-1">
+                    <h3>Personagem: Thorin Escudo de Carvalho</h3>
+                    <p>Classe: Guerreiro | Raça: Anão | Nível: 3</p>
+                    <button class="edit-character">Editar Ficha</button>
+                </div>
+            </div>
+            <button class="add-character">+ Adicionar Novo Personagem</button>
+        </div>
+    
+        <!-- Ficha de Personagem -->
+        <div class="character-sheet-container">
+            <!-- Informações do Personagem -->
+            <div class="character-info">
+                <div>
+                    <label>Nome do Personagem:</label>
+                    <input type="text" placeholder="Ex: Thorin Escudo de Carvalho">
+                </div>
+                <div>
+                    <label>Classe e Nível:</label>
+                    <input type="text" placeholder="Ex: Guerreiro 3">
+                </div>
+                <div>
+                    <label>Raça:</label>
+                    <input type="text" placeholder="Ex: Anão">
+                </div>
+                <div>
+                    <label>Antecedente:</label>
+                    <input type="text" placeholder="Ex: Soldado">
+                </div>
+                <div>
+                    <label>Alinhamento:</label>
+                    <input type="text" placeholder="Ex: Neutro Bom">
+                </div>
+            </div>
+        
+            <!-- Atributos -->
+            <div class="attributes">
+                <h3>Atributos</h3>
+                <div class="attribute">
+                    <label>Força:</label>
+                    <input type="number" min="1" max="20" value="10">
+                </div>
+                <div class="attribute">
+                    <label>Destreza:</label>
+                    <input type="number" min="1" max="20" value="10">
+                </div>
+                <div class="attribute">
+                    <label>Constituição:</label>
+                    <input type="number" min="1" max="20" value="10">
+                </div>
+                <div class="attribute">
+                    <label>Inteligência:</label>
+                    <input type="number" min="1" max="20" value="10">
+                </div>
+                <div class="attribute">
+                    <label>Sabedoria:</label>
+                    <input type="number" min="1" max="20" value="10">
+                </div>
+                <div class="attribute">
+                    <label>Carisma:</label>
+                    <input type="number" min="1" max="20" value="10">
+                </div>
+            </div>
+        
+            <!-- Proeficiências e Idiomas -->
+            <div class="proficiencies">
+                <h3>Proeficiências e Idiomas</h3>
+                <textarea rows="5" placeholder="Ex: Armaduras leves, espadas longas, idioma élfico..."></textarea>
+            </div>
+        
+            <!-- Equipamentos -->
+            <div class="equipment">
+                <h3>Equipamentos</h3>
+                <textarea rows="5" placeholder="Ex: Machado de batalha, Armadura de couro, Poções de cura..."></textarea>
+            </div>
+        </div>
+
+        <!-- Modal para Edição de Informações -->
+<div id="info-modal" class="window" style="display: none;">
+    <div class="window-header">
+        <span>Informações</span>
+        <button id="close-modal" class="close-modal">&times;</button>
+    </div>
+    <div id="modal-content">
+        <!-- Conteúdo dinâmico inserido aqui -->
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // Selecionar elementos principais
+    const editInfoButton = document.querySelector('.edit-info');
+    const addCharacterButton = document.querySelector('.add-character');
+    const charactersList = document.querySelector('.characters-list');
+    const editPicButton = document.querySelector('.edit-pic');
+    const modal = document.getElementById('info-modal');
+    const modalContent = document.getElementById('modal-content');
+    const closeModalButton = document.getElementById('close-modal');
+
+    // Função para mostrar o modal
+    const showModal = (title, contentHTML) => {
+        const modalHeader = modal.querySelector('.window-header span');
+        modalHeader.textContent = title;
+        modalContent.innerHTML = contentHTML;
+        modal.style.display = 'block';
+        charactersList.style.display = 'none'; // Esconder a lista de personagens
+    };
+
+    // Função para fechar o modal
+    const hideModal = () => {
+        modal.style.display = 'none';
+        charactersList.style.display = 'block'; // Mostrar lista de personagens novamente
+    };
+
+    // Eventos do modal
+    closeModalButton.addEventListener('click', hideModal);
+
+    // Edição de informações do usuário
+    editInfoButton.addEventListener('click', () => {
+        const contentHTML = `
+            <div>
+                <label>Nome de Usuário:</label>
+                <input type="text" id="edit-username" value="${document.getElementById('username').textContent}">
+            </div>
+            <div>
+                <label>E-mail:</label>
+                <input type="email" id="edit-email" value="${document.getElementById('email').textContent}">
+            </div>
+            <button class="save-modal">Salvar</button>
+        `;
+        showModal('Editar Perfil', contentHTML);
+
+        // Adicionar evento para o botão "Salvar"
+        const saveButton = modalContent.querySelector('.save-modal');
+        saveButton.addEventListener('click', () => {
+            const newUsername = document.getElementById('edit-username').value;
+            const newEmail = document.getElementById('edit-email').value;
+
+            document.getElementById('username').textContent = newUsername;
+            document.getElementById('email').textContent = newEmail;
+
+            alert('Informações salvas com sucesso!');
+            hideModal();
+        });
+    });
+
+    // Alteração da foto do perfil
+    editPicButton.addEventListener('click', () => {
+        const newPicUrl = prompt('Insira a URL de uma nova foto de perfil:');
+        if (newPicUrl) {
+            document.querySelector('.profile-pic img').src = newPicUrl;
+        }
+    });
+
+    // Adicionar novo personagem
+    addCharacterButton.addEventListener('click', () => {
+        const contentHTML = `
+            <div>
+                <label>Nome do Personagem:</label>
+                <input type="text" id="char-name" placeholder="Ex: Thorin Escudo de Carvalho">
+            </div>
+            <div>
+                <label>Classe e Nível:</label>
+                <input type="text" id="char-class" placeholder="Ex: Guerreiro 3">
+            </div>
+            <div>
+                <label>Raça:</label>
+                <input type="text" id="char-race" placeholder="Ex: Anão">
+            </div>
+            <button class="save-modal">Salvar</button>
+        `;
+        showModal('Adicionar Novo Personagem', contentHTML);
+
+        // Adicionar evento para o botão "Salvar"
+        const saveButton = modalContent.querySelector('.save-modal');
+        saveButton.addEventListener('click', () => {
+            const charName = document.getElementById('char-name').value;
+            const charClass = document.getElementById('char-class').value;
+            const charRace = document.getElementById('char-race').value;
+
+            if (charName && charClass && charRace) {
+                const newCharacterCard = document.createElement('div');
+                newCharacterCard.classList.add('character-card');
+                newCharacterCard.innerHTML = `
+                    <h3>Personagem: ${charName}</h3>
+                    <p>Classe: ${charClass} | Raça: ${charRace}</p>
+                    <button class="edit-character">Editar Ficha</button>
+                `;
+                charactersList.appendChild(newCharacterCard);
+                hideModal();
+
+                // Adicionar evento de edição para o novo personagem
+                const editButton = newCharacterCard.querySelector('.edit-character');
+                editButton.addEventListener('click', () => editCharacter(newCharacterCard));
+            } else {
+                alert('Por favor, preencha todas as informações.');
+            }
+        });
+    });
+
+    // Função para editar um personagem existente
+    const editCharacter = (characterCard) => {
+        const charName = characterCard.querySelector('h3').textContent.split(': ')[1];
+        const charDetails = characterCard.querySelector('p').textContent.split('|');
+        const charClass = charDetails[0].split(': ')[1];
+        const charRace = charDetails[1].split(': ')[1];
+
+        const contentHTML = `
+            <div>
+                <label>Nome do Personagem:</label>
+                <input type="text" id="char-name" value="${charName}">
+            </div>
+            <div>
+                <label>Classe e Nível:</label>
+                <input type="text" id="char-class" value="${charClass}">
+            </div>
+            <div>
+                <label>Raça:</label>
+                <input type="text" id="char-race" value="${charRace}">
+            </div>
+            <button class="save-modal">Salvar</button>
+        `;
+        showModal('Editar Personagem', contentHTML);
+
+        // Adicionar evento para o botão "Salvar"
+        const saveButton = modalContent.querySelector('.save-modal');
+        saveButton.addEventListener('click', () => {
+            const newCharName = document.getElementById('char-name').value;
+            const newCharClass = document.getElementById('char-class').value;
+            const newCharRace = document.getElementById('char-race').value;
+
+            characterCard.querySelector('h3').textContent = `Personagem: ${newCharName}`;
+            characterCard.querySelector('p').textContent = `Classe: ${newCharClass} | Raça: ${newCharRace}`;
+            hideModal();
+        });
+    };
+
+    // Adicionar eventos de edição para personagens existentes
+    document.querySelectorAll('.edit-character').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const characterCard = e.target.closest('.character-card');
+            editCharacter(characterCard);
+        });
+    });
+});
+
+</script>
