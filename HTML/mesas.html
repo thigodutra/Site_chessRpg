@@ -115,40 +115,6 @@
             <p>Conteúdo do Modal 2</p>
         </div>
     </div>
-
-    <!-- JavaScript embutido -->
-    <script>
-        // Função para abrir o modal
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.add('show');
-            }
-        }
-
-        // Função para fechar o modal
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.remove('show');
-            }
-        }
-
-        // Seleciona todos os botões de abrir modal
-        document.querySelectorAll('.open-modal').forEach(button => {
-            button.addEventListener('click', () => {
-                const modalId = button.getAttribute('data-modal');
-                openModal(modalId);
-            });
-        });
-
-        // Seleciona todos os botões de fechar modal
-        document.querySelectorAll('.close-modal').forEach(button => {
-            button.addEventListener('click', () => {
-                const modalId = button.closest('.window').id;
-                closeModal(modalId);
-            });
-        });
-    </script>
+    <script src="../JavaScript/script.js" defer></script>
 </body>
 </html>

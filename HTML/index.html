@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comunidade RPG</title>
     <link rel="stylesheet" href="/CSS/style.css">
-    <script src="/JavaScript/script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 </head>
 
@@ -97,86 +96,6 @@
         </div>
     </div>
 
-    <script>
-        // Carrossel de imagens
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = document.querySelectorAll('.carousel-container img');
-            let currentIndex = 0;
-
-            function showImage(index) {
-                images.forEach((img, i) => {
-                    img.classList.toggle('show', i === index);
-                });
-            }
-
-            function nextImage() {
-                currentIndex = (currentIndex + 1) % images.length;
-                showImage(currentIndex);
-            }
-
-            setInterval(nextImage, 3000);
-
-            const contactForm = document.getElementById('contactForm');
-            const formResponse = document.getElementById('formResponse');
-
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const name = document.getElementById('name').value;
-                formResponse.innerHTML = `<p>Obrigado, ${name}! Sua mensagem foi enviada.</p>`;
-                contactForm.reset();
-            });
-        });
-
-        let index = 0;
-        const carouselImages = document.querySelectorAll('.carousel-container img');
-
-        function showNextImage() {
-            carouselImages[index].style.display = 'none';
-            index = (index + 1) % carouselImages.length;
-            carouselImages[index].style.display = 'block';
-        }
-
-        function showPrevImage() {
-            carouselImages[index].style.display = 'none';
-            index = (index - 1 + carouselImages.length) % carouselImages.length;
-            carouselImages[index].style.display = 'block';
-        }
-
-        carouselImages.forEach(img => img.style.display = 'none');
-        carouselImages[index].style.display = 'block';
-
-        // Modal Script
-        const modal = document.getElementById("myModal");
-        const imageLink = document.getElementById("image1");
-        const closeButtons = document.querySelectorAll(".close");
-
-        imageLink.onclick = function(event) {
-            event.preventDefault();
-            modal.style.display = "block";
-        }
-
-        closeButtons.forEach(button => {
-            button.onclick = function() {
-                modal.style.display = "none";
-            }
-        });
-
-        window.onclick = function(event) {
-            if (event.target == modal || event.target == document.getElementById("curiositiesModal")) {
-                modal.style.display = "none";
-                document.getElementById("curiositiesModal").style.display = "none";
-            }
-        }
-
-        const curiositiesModal = document.getElementById("curiositiesModal");
-        const rpg2ImageLink = document.querySelector(".carousel-container a:nth-child(2)");
-
-        rpg2ImageLink.onclick = function(event) {
-            event.preventDefault();
-            curiositiesModal.style.display = "block";
-        }
-    </script>
-
     <footer class="footer">
         <div class="footer-container">
             <h2>Sobre Nós</h2>
@@ -184,5 +103,6 @@
             <p>&copy; 2024 RPG Comunidade. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <script src="../JavaScript/script.js" defer></script>
 </body>
 </html>

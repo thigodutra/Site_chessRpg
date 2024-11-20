@@ -4,26 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/CSS/style.css">
-    <script src="/JavaScript/script.js"></script> 
+    <link rel="stylesheet" href="/CSS/style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const navLinks = document.querySelectorAll('.nav a');
-        const currentPath = window.location.pathname;
-
-        navLinks.forEach(link => {
-            // Verifica se o href do link corresponde à URL atual
-            if (link.getAttribute('href') === currentPath.split('/').pop()) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    });
 
 <body>
+    <script src="/JavaScript/script.js"></script>
     <header class="header">
         <div class="container">
             <div class="row">
@@ -56,3 +42,5 @@
             </div>
         </div>
     </header>
+    <script src="../JavaScript/script.js" defer></script>
+    </body>
