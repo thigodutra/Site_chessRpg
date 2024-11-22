@@ -3,44 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/CSS/style.css"> 
+    <title>Comunidade RPG</title>
+    <link rel="stylesheet" href="/css/style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <script src="/JavaScript/script.js"></script>
     <header class="header">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- Logo -->
-                        <a href="/HTML/comunidade.html" class="logo">
-                            <img src="/assets/logo.png" alt="">
+                        <a href="/html/comunidade.html" class="logo">
+                            <img src="/assets/logo.png" alt="Logo RPG">
                         </a>
                         <!-- Pesquisa -->
                         <div class="search-input">
                             <form id="search" action="#">
-                                <input type="text" placeholder="Digite alguma coisa..." />
+                                <input type="text" placeholder="Busque por posts..." />
                                 <i class="procurar"></i>
                             </form>
                         </div>
                         <!-- Menu -->
                         <ul class="nav">
-                            <li><a href="/HTML/index.html" class="active">Início</a></li>
-                            <li><a href="/HTML/mesas.html">Mesas</a></li>
-                            <li><a href="/HTML/conquista.html">Conquistas</a></li>
-                            <li><a href="/HTML/comunidade.html">Comunidade</a></li>
-                            <li><a href="/HTML/perfil.html"> <img src="/assets/perfil.png"></a></li>
-                        </ul>   
-                        <a class='menu'>
-                            <span>Menu</span>
-                        </a>
+                            <li><a href="/html/index.html">Início</a></li>
+                            <li><a href="/html/mesas.html">Mesas</a></li>
+                            <li><a href="/html/conquista.html">Conquistas</a></li>
+                            <li><a href="/html/comunidade.html" class="active">Comunidade</a></li>
+                            <li><a href="/html/perfil.html"> <img src="/assets/perfil.png" alt="Perfil"></a></li>
+                        </ul>
+                        <a class='menu'><span>Menu</span></a>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
-    <script src="../JavaScript/script.js" defer></script>
-    </body>
+
+    <main>
+        <!-- Área de criação de post -->
+        <section class="create-post">
+            <div class="container">
+                <h2>Compartilhe sua Aventura!</h2>
+                <form id="postForm">
+                    <textarea id="postContent" placeholder="Escreva sobre sua mesa de RPG, um personagem épico ou uma aventura memorável..." rows="5"></textarea>
+                    <input type="file" id="postImage" accept="image/*">
+                    <button type="submit">Publicar</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Feed de posts -->
+        <section class="posts-feed">
+            <div class="container">
+                <h2>Feed da Comunidade</h2>
+                <div class="post">
+                    <div class="post-header">
+                        <img src="/assets/user1.jpg" alt="Usuário" class="post-avatar">
+                        <div>
+                            <h3>Mestre Épico</h3>
+                            <span>2 horas atrás</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>Concluímos a primeira campanha em nossa mesa de *D&D 5e*. Foi incrível ver a evolução dos personagens!</p>
+                        <img src="/assets/rpg-session.jpg" alt="Imagem da sessão">
+                    </div>
+                    <div class="post-actions">
+                        <button>💬 Comentar</button>
+                        <button>❤️ Curtir</button>
+                        <button>🔁 Compartilhar</button>
+                    </div>
+                </div>
+                <!-- Adicione mais posts aqui -->
+            </div>
+        </section>
+    </main>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const postForm = document.getElementById('postForm');
+    const postsFeed = document.querySelector('.posts-feed');
+
+    postForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const content = document.getElementById('postContent').value;
+        const image = document.getElementById('postImage').files[0];
+
+        if (!content) {
+            alert('Escreva algo para postar!');
+            return;
+        }
+
+        const post = document.createElement('div');
+        post.className = 'post';
+
+        post.innerHTML = `
+            <div class="post-header">
+                <img src="/assets/user1.jpg" alt="Usuário" class="post-avatar">
+                <div>
+                    <h3>Você</h3>
+                    <span>Agora mesmo</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>${content}</p>
+                ${image ? `<img src="${URL.createObjectURL(image)}" alt="Imagem do post">` : ''}
+            </div>
+            <div class="post-actions">
+                <button>💬 Comentar</button>
+                <button>❤️ Curtir</button>
+                <button>🔁 Compartilhar</button>
+            </div>
+        `;
+
+        postsFeed.appendChild(post);
+        postForm.reset();
+    });
+});
+</script>
+</body>
+</html>

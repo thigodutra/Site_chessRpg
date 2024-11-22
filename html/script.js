@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = document.getElementById('name').value;
-        formResponse.innerHTML = `<p>Obrigado, ${name}! Sua mensagem foi enviada.</p>`;
+        formResponse.innerhtml = `<p>Obrigado, ${name}! Sua mensagem foi enviada.</p>`;
         contactForm.reset();
     });
 
@@ -84,9 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalContent = document.getElementById('modal-content');
     const closeModalButton = document.getElementById('close-modal');
 
-    const showModal = (title, contentHTML) => {
+    const showModal = (title, contenthtml) => {
         modal.querySelector('.window-header span').textContent = title;
-        modalContent.innerHTML = contentHTML;
+        modalContent.innerhtml = contenthtml;
         modal.style.display = 'block';
         charactersList.style.display = 'none';
     };
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModalButton.addEventListener('click', hideModal);
 
     editInfoButton.addEventListener('click', () => {
-        const contentHTML = `
+        const contenthtml = `
             <div>
                 <label>Nome de Usuário:</label>
                 <input type="text" id="edit-username" value="${document.getElementById('username').textContent}">
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <button class="save-modal">Salvar</button>
         `;
-        showModal('Editar Perfil', contentHTML);
+        showModal('Editar Perfil', contenthtml);
 
         modalContent.querySelector('.save-modal').addEventListener('click', () => {
             const newUsername = document.getElementById('edit-username').value;
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     addCharacterButton.addEventListener('click', () => {
-        const contentHTML = `
+        const contenthtml = `
             <div>
                 <label>Nome do Personagem:</label>
                 <input type="text" id="char-name" placeholder="Ex: Thorin Escudo de Carvalho">
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <button class="save-modal">Salvar</button>
         `;
-        showModal('Adicionar Novo Personagem', contentHTML);
+        showModal('Adicionar Novo Personagem', contenthtml);
 
         modalContent.querySelector('.save-modal').addEventListener('click', () => {
             const charName = document.getElementById('char-name').value;
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (charName && charClass && charRace) {
                 const newCharacterCard = document.createElement('div');
                 newCharacterCard.classList.add('character-card');
-                newCharacterCard.innerHTML = `
+                newCharacterCard.innerhtml = `
                     <h3>Personagem: ${charName}</h3>
                     <p>Classe: ${charClass} | Raça: ${charRace}</p>
                     <button class="edit-character">Editar Ficha</button>
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const charClass = charDetails[0].split(': ')[1];
         const charRace = charDetails[1].split(': ')[1];
 
-        const contentHTML = `
+        const contenthtml = `
             <div>
                 <label>Nome do Personagem:</label>
                 <input type="text" id="char-name" value="${charName}">
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <button class="save-modal">Salvar</button>
         `;
-        showModal('Editar Personagem', contentHTML);
+        showModal('Editar Personagem', contenthtml);
 
         modalContent.querySelector('.save-modal').addEventListener('click', () => {
             const newCharName = document.getElementById('char-name').value;
