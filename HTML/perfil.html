@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perfil do Usuário</title>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 </head>
 
 <audio id="background-music" loop>
-    <source src="song/music.mp3" type="audio/mpeg">
+    <source src="/song/music.mp3" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
 </audio>
 
@@ -19,25 +19,22 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
-                        <!-- Logo -->
                         <a href="/html/perfil.html" class="logo">
-                            <img src="/assets/logo.png" alt="">
+                            <img src="/assets/logo.png" alt="Logo">
                         </a>
-                        <!-- Pesquisa -->
                         <div class="search-input">
                             <form id="search" action="#">
                                 <input type="text" placeholder="Digite alguma coisa..." />
                                 <i class="procurar"></i>
                             </form>
                         </div>
-                        <!-- Menu -->
                         <ul class="nav">
                             <li><a href="/html/index.html">Início</a></li>
                             <li><a href="/html/mesas.html">Mesas</a></li>
                             <li><a href="/html/conquista.html">Conquistas</a></li>
                             <li><a href="/html/comunidade.html">Comunidade</a></li>
-                            <li><a href="/html/perfil.html"class="active"> <img src="/assets/perfil.png"></a></li>
-                        </ul>   
+                            <li><a href="/html/perfil.html" class="active"><img src="/assets/perfil.png" alt="Perfil"></a></li>
+                        </ul>
                         <a class='menu'>
                             <span>Menu</span>
                         </a>
@@ -65,93 +62,54 @@
         <div class="characters-section">
             <h2>Meus Personagens</h2>
             <div class="characters-list">
-                <!-- Um personagem de exemplo -->
-                <div class="character-card" id="char-1">
-                    <h3>Personagem: Thorin Escudo de Carvalho</h3>
-                    <p>Classe: Guerreiro | Raça: Anão | Nível: 3</p>
-                    <button class="edit-character">Editar Ficha</button>
+                <!-- Fichas de personagens organizadas por sistema -->
+                <div class="character-system">
+                    <h3>Ordem Paranormal</h3>
+                    <button class="add-character">+ Adicionar Novo Personagem</button>
+                    <div class="character-card">
+                        <h4>Personagens</h4>
+                    </div>
                 </div>
-            </div>
-            <button class="add-character">+ Adicionar Novo Personagem</button>
-        </div>
-    
-        <!-- Ficha de Personagem -->
-        <div class="character-sheet-container">
-            <!-- Informações do Personagem -->
-            <div class="character-info">
-                <div>
-                    <label>Nome do Personagem:</label>
-                    <input type="text" placeholder="Ex: Thorin Escudo de Carvalho">
-                </div>
-                <div>
-                    <label>Classe e Nível:</label>
-                    <input type="text" placeholder="Ex: Guerreiro 3">
-                </div>
-                <div>
-                    <label>Raça:</label>
-                    <input type="text" placeholder="Ex: Anão">
-                </div>
-                <div>
-                    <label>Antecedente:</label>
-                    <input type="text" placeholder="Ex: Soldado">
-                </div>
-                <div>
-                    <label>Alinhamento:</label>
-                    <input type="text" placeholder="Ex: Neutro Bom">
-                </div>
-            </div>
-        
-            <!-- Atributos -->
-            <div class="attributes">
-                <h3>Atributos</h3>
-                <div class="attribute">
-                    <label>Força:</label>
-                    <input type="number" min="1" max="20" value="10">
-                </div>
-                <div class="attribute">
-                    <label>Destreza:</label>
-                    <input type="number" min="1" max="20" value="10">
-                </div>
-                <div class="attribute">
-                    <label>Constituição:</label>
-                    <input type="number" min="1" max="20" value="10">
-                </div>
-                <div class="attribute">
-                    <label>Inteligência:</label>
-                    <input type="number" min="1" max="20" value="10">
-                </div>
-                <div class="attribute">
-                    <label>Sabedoria:</label>
-                    <input type="number" min="1" max="20" value="10">
-                </div>
-                <div class="attribute">
-                    <label>Carisma:</label>
-                    <input type="number" min="1" max="20" value="10">
-                </div>
-            </div>
-        
-            <!-- Proeficiências e Idiomas -->
-            <div class="proficiencies">
-                <h3>Proeficiências e Idiomas</h3>
-                <textarea rows="5" placeholder="Ex: Armaduras leves, espadas longas, idioma élfico..."></textarea>
-            </div>
-        
-            <!-- Equipamentos -->
-            <div class="equipment">
-                <h3>Equipamentos</h3>
-                <textarea rows="5" placeholder="Ex: Machado de batalha, Armadura de couro, Poções de cura..."></textarea>
-            </div>
-        </div>
 
-        <!-- Modal para Edição de Informações -->
-<div id="info-modal" class="window" style="display: none;">
-    <div class="window-header">
-        <span>Informações</span>
-        <button id="close-modal" class="close-modal">&times;</button>
+                <div class="character-system">
+                    <h3>D&D 5e</h3>
+                    <button class="add-character">+ Adicionar Novo Personagem</button>
+                    <div class="character-card">
+                        <h4>Personagens</h4>
+                    </div>
+                </div>
+
+                <div class="character-system">
+                    <h3>Vampiro à Máscara</h3>
+                    <button class="add-character">+ Adicionar Novo Personagem</button>
+                    <div class="character-card">
+                        <h4>Personagens</h4>
+                    </div>
+                </div>
+
+                <div class="character-system">
+                    <h3>Call Of Cthulhu</h3>
+                    <button class="add-character">+ Adicionar Novo Personagem</button>
+                    <div class="character-card">
+                        <h4>Personagens</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="modal-content">
-        <!-- Conteúdo dinâmico inserido aqui -->
+
+    <!-- Modal para Edição de Informações -->
+    <div id="info-modal" class="window" style="display: none;">
+        <div class="window-header">
+            <span>Informações</span>
+            <button id="close-modal" class="close-modal">&times;</button>
+        </div>
+        <div id="modal-content">
+            <!-- Conteúdo dinâmico inserido aqui -->
+        </div>
     </div>
-</div>
-<script src="/script/script.js"></script>
+
+
+    <script src="/script/script_perfil.js"></script>
 </body>
+</html>
