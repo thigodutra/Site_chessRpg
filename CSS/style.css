@@ -45,7 +45,7 @@ body {
 .search-input input[type="text"] {
     padding: 8px 120px;
     border-radius: 5px;
-    margin-left: -100px;
+    margin-left: 5%;
     border: 2px solid #7b4705;
     background-color: #3c3c3c;
     color: #e2e2e2;
@@ -424,7 +424,7 @@ button {
     padding: 20px;
     border: 3px solid #000000;
     border-radius: 15px;
-    background-image: url('assets/background.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('/assets/background.jpg'); /* Substitua pelo caminho da sua imagem */
     background-size: cover; /* Faz a imagem cobrir todo o elemento */
     background-position: center; /* Centraliza a imagem */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
@@ -760,4 +760,115 @@ h3 {
     border-bottom: 2px solid #333;
     margin-bottom: 10px;
     padding-bottom: 5px;
+}
+
+/* post */
+
+/* Estilo da área de criação de post */
+.create-post {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border: 3px solid #7b4705;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.create-post h2 {
+    color: #e2e2e2;
+    margin-bottom: 10px;
+}
+
+#create-post textarea {
+    width: 100%;
+    border: 2px solid #7b4705;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #3c3c3c;
+    color: #e2e2e2;
+    resize: none;
+}
+
+#create-post input[type="file"] {
+    margin: 10px 0;
+    color: #e2e2e2;
+}
+
+#create-post button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #7b4705;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 1em;
+}
+
+#create-post button:hover {
+    background-color: #9b5705;
+}
+
+/* Feed de posts */
+.posts-feed {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #292929;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.posts-feed h2 {
+    color: #e2e2e2;
+    margin-bottom: 20px;
+}
+
+.post {
+    border: 2px solid #7b4705;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #3c3c3c;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.post-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #7b4705;
+}
+
+.post-content img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 2px solid #7b4705;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.post-actions button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7b4705;
+    color: #fff;
+    cursor: pointer;
+}
+
+.post-actions button:hover {
+    background-color: #9b5705;
 }
