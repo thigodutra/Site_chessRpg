@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade RPG</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <audio id="background-music" loop>
+        <source src="song/music.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <header class="header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="/html/index.html" class="logo">
+                    <img src="/assets/logo.png" alt="Logo RPG">
+                </a>
+                <div class="search-input">
+                    <form id="search" action="#">
+                        <input type="text" placeholder="Digite alguma coisa..." />
+                        <i class="procurar"></i>
+                    </form>
+                </div>
+                <ul class="nav">
+                    <li><a href="/html/index.html" class="active">Início</a></li>
+                    <li><a href="/html/mesas.html">Mesas</a></li>
+                    <li><a href="/html/conquista.html">Conquistas</a></li>
+                    <li><a href="/html/comunidade.html">Comunidade</a></li>
+                    <li><a href="/html/perfil.html"> <img src="/assets/perfil.png"></a></li>
+                </ul>
+                <a class='menu'>
+                    <span>Menu</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="carousel"> 
+        <div class="carousel-container">
+            <a href="#" id="image1"><img src="/assets/rpg.jpg" alt="Imagem 1"></a>
+            <a href="/html/comunidade.html"><img src="/assets/rpg2.jpg" alt="Imagem 2"></a>
+            <a href="/html/comunidade.html"><img src="/assets/rpg3.jpg" alt="Imagem 3"></a>
+        </div>
+    </section>
+
+    <section class="information">
+        <div class="container">
+            <h2>Bem-vindo à nossa Comunidade RPG!</h2>
+            <p>Aqui você pode explorar diversas mesas de RPG, interagir com outros jogadores e mestres, e compartilhar suas experiências de jogo.</p>
+            <h3>Recursos da Comunidade</h3>
+            <ul>
+                <li><strong>Mesas de Jogo:</strong> Descubra mesas ativas e novas campanhas para se juntar.</li>
+                <li><strong>Conquistas:</strong> Acompanhe suas conquistas e as dos outros jogadores.</li>
+                <li><strong>Eventos:</strong> Participe de eventos especiais e torneios organizados pela comunidade.</li>
+                <li><strong>Guias e Dicas:</strong> Acesse guias e dicas para melhorar suas habilidades de jogo.</li>
+                <li><strong>Fórum:</strong> Participe de discussões e tire suas dúvidas em nosso fórum.</li>
+            </ul>
+        </div>
+    </section>
+  
+    <section class="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <form id="contactForm">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" rows="5" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="formResponse"></div>
+        </div>
+    </section>
+
+    <div id="curiositiesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Curiosidades de RPGs de Mesa</h2>
+            <p>Os RPGs de mesa têm uma rica história que remonta aos anos 70, com o lançamento de "Dungeons & Dragons" sendo um dos marcos mais importantes para o gênero.</p>
+            <ul>
+                <li>O primeiro RPG foi inspirado em wargames militares e evoluiu para aventuras mais imaginativas e narrativas.</li>
+                <li>RPGs são tão populares que inspiraram diversos jogos de videogame e literatura fantástica.</li>
+                <li>Existem vários sistemas de RPG, como D&D, GURPS, e Call of Cthulhu, cada um com suas próprias regras e estilos de jogo.</li>
+                <li>O maior evento de RPG do mundo, a Gen Con, acontece anualmente nos EUA e atrai milhares de jogadores de todo o mundo.</li>
+            </ul>
+            <p>Essas são apenas algumas das curiosidades do universo dos RPGs de mesa, que continuam a cativar jogadores de todas as idades!</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <h2>Sobre Nós</h2>
+            <p>Somos uma comunidade dedicada a conectar entusiastas de RPG, proporcionando um ambiente onde jogadores podem compartilhar experiências, organizar eventos e participar de discussões sobre jogos de mesa e suas conquistas. Junte-se a nós para explorar mundos fantásticos!</p>
+            <p>&copy; 2024 RPG Comunidade. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="/script/script.js"></script>
+
+</body>
+</html>
